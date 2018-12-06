@@ -1,0 +1,15 @@
+<div>
+  <!-- header -->
+  <div class="modal-header">
+    <h3 class="modal-title">Remove API</h3>
+  </div>
+  <!-- body -->
+  <div class="modal-body">
+    Are you sure you want to delete the route <strong class="text-danger">{{vm.route.method}} {{vm.route.path}}</strong> ?
+  </div>
+  <!-- footer -->
+  <div class="modal-footer">
+    <button type="button" class="btn btn-info" ng-click="vm.onOkClick()">OK</button>
+    <button type="button" class="btn btn-default" ng-click="vm.onCancelClick()">Cancel</button>
+  </div>
+</div>

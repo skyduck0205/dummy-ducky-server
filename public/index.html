@@ -1,0 +1,37 @@
+<html>
+
+<head>
+  <title>Dummy Ducky Server</title>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/ng-toast/2.0.0/ngToast.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/ng-toast/2.0.0/ngToast-animations.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jsoneditor/5.26.2/jsoneditor.min.css">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body ng-app="dds">
+  <toast></toast>
+  <ui-view></ui-view>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jsoneditor/5.26.2/jsoneditor.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular-animate.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular-sanitize.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.20/angular-ui-router.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ng-toast/2.0.0/ngToast.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ng-jsoneditor/1.51/ng-jsoneditor.min.js"></script>
+
+  <script src="app/app.js"></script>
+  <script src="app/services/dds.service.js"></script>
+  <script src="app/services/toast.service.js"></script>
+  <script src="app/directives/status.directive.js"></script>
+  <script src="app/directives/on-change.directive.js"></script>
+  <script src="app/list/list.controller.js"></script>
+  <script src="app/modals/editor-modal.controller.js"></script>
+  <script src="app/modals/remove-modal.controller.js"></script>
+</body>
+
+</html>

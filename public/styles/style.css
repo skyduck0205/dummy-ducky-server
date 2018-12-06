@@ -1,0 +1,69 @@
+*:focus {
+  outline: none !important;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+/* bootstrap */
+.navbar {
+  margin-bottom: 0;
+}
+.navbar-collapse {
+  padding: 0;
+}
+
+.table {
+  table-layout: fixed;
+}
+.table td,
+.table th {
+  vertical-align: middle !important;
+  word-break: break-all;
+}
+
+/* dds */
+.dds-page {
+  display: block;
+  padding-top: 50px;
+}
+
+.dds-navbar {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border-radius: 0;
+}
+
+.dds-route.disabled {
+  background: #f2f2f2;
+  color: #999;
+}
+.dds-route td button {
+  word-break: break-word;
+  white-space: initial;
+  text-align: left;
+}
+
+.dds-editor-modal .panel-title .glyphicon {
+  margin-left: 10px;
+  color: #999;
+  transition: all ease-in-out .15s;
+}
+.dds-editor-modal .panel-title .glyphicon:hover {
+  color: #000;
+}
+.dds-editor-modal .panel-body {
+  padding: 0;
+}
+.dds-editor-modal .panel-body .jsoneditor {
+  border: 0;
+}
+.dds-editor-modal .panel-body .jsoneditor-menu {
+  background: #999;
+  border-color: #999;
+}

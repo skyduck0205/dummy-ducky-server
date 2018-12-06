@@ -1,0 +1,73 @@
+<nav class="dds-navbar navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">DummyDuckyServer</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-right">
+      <button type="button" class="btn btn-default navbar-btn" ng-click="vm.onExportClick()">
+        <i class="glyphicon glyphicon-export"></i>
+        Export
+      </button>
+      <button type="button" class="btn btn-default navbar-btn" ng-click="vm.onImportClick()">
+        <i class="glyphicon glyphicon-import"></i>
+        Import
+      </button>
+      <button type="button" class="btn btn-info navbar-btn" ng-click="vm.onApiEditClick()">
+        <i class="glyphicon glyphicon-plus"></i>
+        Add API
+      </button>
+    </div>
+  </div>
+</nav>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th style="width: 50px">#</th>
+      <th style="width: 80px">Method</th>
+      <th style="width: 40%">API</th>
+      <th style="width: 20%">Response</th>
+      <th style="width: 170px"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="route in vm.routes | orderBy: 'path'" class="dds-route" ng-class="{ disabled: route.disabled, warning: route.isNew }">
+      <td></td>
+      <td>{{route.method}}</td>
+      <td>{{route.path}}</td>
+      <td>
+        <div class="btn-group" uib-dropdown ng-if="!_.isEmpty(route.responses)">
+          <button type="button" class="btn btn-default" uib-dropdown-toggle ng-disabled="route.disabled">
+            <dds-status status="route.currentResponse.value.status"></dds-status>
+            {{route.currentResponse.key}} 
+            <i class="caret"></i>
+          </button>
+          <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+            <li role="menuitem" ng-repeat="response in route.responses track by response.key" ng-click="vm.onResponseSelect(route, response)">
+              <a><dds-status status="response.value.status"></dds-status> {{response.key}}</a>
+            </li>
+          </ul>
+        </div>
+        <span class="text-muted" ng-if="_.isEmpty(route.responses)">No responses :(</span>
+      </td>
+      <td>
+        <button type="button" class="btn btn-default" uib-tooltip="Edit API" ng-click="vm.onApiEditClick(route, true)">
+          <i class="glyphicon glyphicon-pencil"></i>
+        </button>
+        <button type="button" class="btn btn-default" uib-tooltip="Copy API" ng-click="vm.onApiEditClick(route)">
+          <i class="glyphicon glyphicon-duplicate"></i>
+        </button>
+        <button type="button" class="btn btn-default" uib-tooltip="Toggle visibility" ng-click="vm.onApiDisableClick(route)">
+          <i class="glyphicon glyphicon-eye-open" ng-if="!route.disabled"></i>
+          <i class="glyphicon glyphicon-eye-close" ng-if="route.disabled"></i>
+        </button>
+        <button type="button" class="btn btn-default" uib-tooltip="Remove" ng-click="vm.onApiRemoveClick(route)">
+          <i class="glyphicon glyphicon-trash"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
