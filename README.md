@@ -1,3 +1,5 @@
+This project is no longer maintained. Please switch to [Dummy API Server](https://github.com/skyduck0205/dummy-api-server) for a better front-end development experience.
+
 # Dummy Ducky Server
 Mock API server for front-end development.
 
